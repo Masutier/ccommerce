@@ -1,0 +1,15 @@
+
+<div class="col-10 mx-auto mb-3 d-grid gap-2">
+    <a href="{% url 'managmentLocals' %}" class="btn btn-info">Admin Locales</a>
+    <a href="{% url 'createLocal' %}" class="btn btn-info">Crear Local</a>
+    <hr class="dropdown-divider">
+    <a href="{% url 'managmentProducts' %}" class="btn btn-success">Admin Productos</a>
+    <a href="{% url 'createProductByAdmin' %}" class="btn btn-success">Crear Producto</a>
+    <hr class="dropdown-divider">
+    <a href="{% url 'managmentUsers' %}" class="btn btn-primary">Admin Usuarios</a>
+    <a href="{% url 'register' %}" class="btn btn-primary">Crear Usuario</a>
+    <hr class="dropdown-divider">
+    <a href="{% url 'payment' %}" class="btn btn-dark">Admin Pagos</a>
+    <a href="{% url 'createPayment' %}" class="btn btn-dark">Crear Pago</a>
+</div>
+

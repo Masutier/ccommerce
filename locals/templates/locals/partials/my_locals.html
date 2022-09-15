@@ -1,0 +1,9 @@
+
+<h3 class="c">Mis Locales</h3>
+<div class="col-12 mt-3 row">
+    {% for local in user_locals %}
+        <h6 class="fontlocal txtcol27 c">
+            {{ local.floor }}-{{ local.localNum }} {{ local.name }}
+        </h6>
+    {% endfor %}
+</div>

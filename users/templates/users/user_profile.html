@@ -1,0 +1,97 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class="col-md-11 p-4 txtcol29 mx-auto">
+    <h1 class="c">{{user.username}} Este es Tu Perfil</h1>
+</div>
+
+<div class="col-11 mx-auto row font-1">
+
+    <div class="col-3 mx-auto mt-3 ">
+        <div class="col-10 mx-auto mb-3">
+            <a href="{% url 'createProductByUser' %}" class="btn btn-info btn-block ">Crear Producto</a>
+        </div>
+
+        <h1> Seccion Usuario</h1>
+        <div class="col-10 mx-auto ">
+            <label>Nombre</label>
+            {{user.first_name}}
+        </div>
+        <div class="col-10 mx-auto">
+            <label>Apellido</label>
+            {{user.last_name}}
+        </div>
+        <div class="col-10 mx-auto ">
+            <label>Documento de Identidad</label>
+            {{user.profile.cc}}
+        </div>
+        <div class="col-10 mx-auto">
+            <label>Numero de Teléfono</label>
+            {{user.profile.phone}}
+        </div>
+        <div class="col-10 mx-auto mb-4">
+            <label>Correo</label>
+            {{user.email}}
+        </div>
+
+        <h1> Tus Locales</h1>
+        
+        <div class="col-10 mx-auto ">
+            {% for local in user_locals %}
+                <h6 class="fontlocal txtcol27">
+                    {{ local.floor }}-{{ local.localNum }} {{ local.name }}
+                </h6>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div class="col-9 mx-auto mt-4 mb-4 c">
+        <h1> Tus Productos</h1>
+
+        <div class="col-12 mx-auto mb-5">
+            <div class="table-responsive">
+                <table class="table">
+                    <tr class="bg-primary">
+                        <th>Local #</th>
+                        <th>Local Nombre</th>
+                        <th>label</th>
+                        <th>category</th>
+                        <th>Product Name</th>
+                        <th>Product price</th>
+                        <th>Product discount</th>
+                        <th>Accion</th>
+                        <th></th>
+                    </tr>
+                    {% for product in objects %}
+                    <tr class="table-primary">
+                        <td>{{ product.local.id }}</td>
+                        <td>{{ product.local.name }}</td>
+                        <td>{{ product.label }}</td>
+                        <td>{{ product.category }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price|intcomma }}</td>
+                        <td>{{ product.discount|intcomma }}</td>
+                        <td>
+                            <a href="{% url 'edit_product' product.id %}" class="btn btn-info btn-sm">Editar</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger btn-sm btn-block" href="{% url 'delete_product' product.id %}">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-md-8 mx-auto mt-3">
+                {% if counter > 13 %}
+                    {% include 'center/partials/pagination.html' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

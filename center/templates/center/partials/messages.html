@@ -1,0 +1,21 @@
+
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} backcol3 txtcol6">
+        <h4>{{ message }}</h4>
+    </div>
+{% endfor %} 
+
+<!-- 
+== Bootstrap Messages tags ==
+message.debug  [white]
+message.info [blue]
+message.success [green]
+message.warning [yellow]
+message.error [red]
+
+messages.debug(request, '%s SQL statements were executed.' % count)
+messages.info(request, 'Three credits remain in your account.')
+messages.success(request, 'Profile details updated.')
+messages.warning(request, 'Your account expires in three days.')
+messages.error(request, 'Document deleted.')
+-->

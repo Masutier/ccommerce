@@ -1,0 +1,65 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class="col-12 ">
+    <h1 class="col-8 pt-4 pb-3 mx-auto txtcol3 c">Detalle del Producto</h1>
+    <div class="col-10 pb-4 mx-auto backcol5">
+        <div class="row">
+            <div class="col-2 mt-4 c">
+                {% if product.foto1 %}
+                    <img src="{{ product.foto1.url }}" class="card-img imgdet m-1" alt="">
+                {% endif %} {% if product.foto2 %}
+                    <img src="{{ product.foto2.url }}" class="card-img imgdet m-1" alt="">
+                {% endif %} {% if product.foto3 %}
+                    <img src="{{ product.foto3.url }}" class="card-img imgdet m-1" alt="">
+                {% endif %}
+            </div>
+
+            <div class="col-4 ">
+                <div class="col-12 mt-4 ">
+                    <img src="{{ product.foto1.url }}" class="card-img " alt="">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="col-10 mx-auto mt-4 ">
+                    <p class="mt-3">Local: <strong>{{ product.local.id }} - {{ product.local.name }}</strong></p>
+                    <h2 class=""><strong>{{ product.name }}</strong></h2>
+                    <p>Precio $
+                        {% if product.discount %}
+                            <del class="mr-1 txtcol2">
+                                {{ product.price|intcomma }}
+                            </del>
+                            <span><strong>{{ product.discount|intcomma }}</strong></span>
+                        {% else %}
+                            <span><strong>{{ product.price|intcomma }}</strong></span>
+                        {% endif %}
+                    </p>
+                    <p class="txtjust">{{ product.description }}</p>
+                    <div class="c">
+                        <button class="btn btn-success btn-block my-2" onclick="goBack()">Regresar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="col-10 mx-auto mt-2">
+                    <span class="badge badge-pill badge-danger mt-3">Categoria: {{ product.category }}</span>
+                </div>
+                <div class="col-10 mx-auto mt-2">
+                    <span class="badge badge-pill badge-danger mt-3">Estado: {{ product.label }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+{% endblock %}

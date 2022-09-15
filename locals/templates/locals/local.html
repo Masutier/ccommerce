@@ -1,0 +1,43 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-12 ">
+    <div class="col-md-11 pt-3 mx-auto">
+        <div class="row">
+            <div class="col-3 c ">
+                <img class="locallogo mx-auto mt-2 " src="{{ local.logo.url }}" alt="">
+            </div>
+            <div class="col-md-6 pt-3 mx-auto">
+                <h1 class="fonttitle">{{ local.name }}</h1>
+                <h5 class="fontinfo ">Local: {{ local.floor }}-{{ local.localNum }}</h5>
+                <h5 class="fontinfo ">Persona Encargada: {{ local.person }}</h5>
+                <h5 class="fontinfo ">Teléfono: {{ local.phone }}</h5>
+                <p class="fontinfo">{{ local.description }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-11 mx-auto p-2 backcol5 c ">
+        <div class="col-md-5 mx-auto">
+            <a class="" href="#">
+                <img class="mediaicon " src="{% static 'img/redes/facebook.png' %}" alt="">
+            </a>
+            <a class="" href="#">
+                <img class="mediaicon " src="{% static 'img/redes/instagram.png' %}" alt="">
+            </a>
+            <a class="" href="#">
+                <img class="mediaicon " src="{% static 'img/redes/twiter.png' %}" alt="">
+            </a>
+            <a class="" href="#">
+                <img class="mediaicon " src="{% static 'img/redes/whatsapp.png' %}" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="col-md-11 mx-auto c ">
+        {% include 'products/products.html' %}
+    </div>
+</div>
+
+{% endblock %}
+

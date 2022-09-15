@@ -1,0 +1,27 @@
+/* navbar */
+
+
+/* back-to-top */
+
+.backtotop {
+    width: 40pt;
+    height: auto;
+    position: fixed;
+    bottom: 5rem;
+    right: 1.75rem;
+    z-index: 999;
+}
+
+.backtotop:hover {
+    color: transparent;
+    background-color: transparent;
+}
+
+
+/* frooter */
+
+.b-fixed{
+    position: fixed !important;
+    bottom: 10px;
+    z-index: 1;
+}

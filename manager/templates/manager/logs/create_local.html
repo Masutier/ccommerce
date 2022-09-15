@@ -1,0 +1,128 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-11 p-4 txtcol29 c">
+    <h1 class="c">Locales</h1>
+</div>
+
+<div class="col-11 row mx-auto">
+
+    <div class="col-3 mt-4 txtcol29 ">
+        {% include 'manager/partials/locals_full.html' %}
+    </div>
+
+    <div class="col-9 ">
+        <div class="col-md-11 p-4 txtcol29 c">
+            <h1 class="ms-4">Crear Local</h1>
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="col-11 mx-auto font-1">
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-5 row mx-auto">
+                        <label>Piso :</label>
+                        {{form.floor}}
+                    </div>
+                    <div class="col-5 row mx-auto ">
+                        <label>Numero del Local :</label>
+                        {{form.localNum}}
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-5 row mx-auto">
+                        <label>Nombre del Local :</label>
+                        {{form.name}}
+                    </div>
+                    <div class="col-5 row mx-auto ">
+                        <label>Persona Encargada :</label>
+                        {{form.person}}
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-6 mx-auto mt-4">
+                        <div class="col-10 row mx-auto ">
+                            <label>Logo del Local :</label>
+                            {{form.logo}}
+                        </div>
+                        <div class="col-10 row mx-auto mt-3">
+                            <label>Foto del Local :</label>
+                            {{form.localFoto}}
+                        </div>
+                    </div>
+
+                    <div class="col-6 mx-auto ">
+                        <div class="col-10 row mx-auto mt-3">
+                            <label>Descripción :</label>
+                            {{form.description}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-5 row mx-auto">
+                        <label>Teléfono :</label>
+                        {{form.phone}}
+                    </div>
+                    <div class="col-5 row mx-auto ">
+                        <label>whatsapp :</label>
+                        {{form.whatsapp}}
+                    </div>
+                </div>
+                
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-5 row mx-auto">
+                        <label>facebook :</label>
+                        {{form.facebook}}
+                    </div>
+                    <div class="col-5 row mx-auto ">
+                        <label>instagram :</label>
+                        {{form.instagram}}
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-8 row mx-auto">
+                        <label>webpage :</label>
+                        {{form.webpage}}
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-6 mx-auto mt-4">
+                        <div class="col-10 row mx-auto mt-3">
+                            <label>Dia de Pago :</label>
+                            <input type="date" name="lastPay" value="lastPay">
+                        </div>
+                        <div class="col-10 row mx-auto mt-3">
+                            <label>Activo Hasta :</label>
+                            <input type="date" name="activethru" value="activethru">
+                        </div>
+                    </div>
+
+                    <div class="col-6 mx-auto mt-4 mt-4">
+                        <div class="col-10 row mx-auto mt-3 ">
+                            <label>Activo :</label>
+                            {{form.active}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-5 mx-auto mt-4 row mb-4">
+                <div class="col-lg-6 mt-4 mb-4 ">
+                    <a class="col-8 btn btn-success" href="{% url 'managmentLocals' %}">Cancel</a>
+                </div>
+                <div class="col-lg-6 mt-4 mb-4 ">
+                    <input class="col-8 btn btn-success " type="submit" value="Create" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+{% endblock content %}

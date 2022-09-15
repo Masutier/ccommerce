@@ -1,0 +1,55 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-11 p-4 txtcol29 c">
+    <h1 class="c">Pagos</h1>
+</div>
+
+<div class="col-11 row mx-auto">
+
+    <div class="col-9 ">
+        <div class="col-md-11 p-4 txtcol29 c">
+            <h1 class="ms-4">Crear Pago</h1>
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="col-11 mx-auto font-1">
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-5 row mx-auto">
+                        <label>local :</label>
+                        {{form.local}}
+                    </div>
+                    <div class="col-5 row mx-auto ">
+                        <label>Fecha de Pago :</label>
+                        {{form.payday}}
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-5 row mx-auto">
+                        <label>Meses :</label>
+                        {{form.monts}}
+                    </div>
+                    <div class="col-5 row mx-auto ">
+                        <label>Cantidad :</label>
+                        {{form.amount}}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-5 mx-auto mt-4 row mb-4">
+                <div class="col-lg-6 mt-4 mb-4 ">
+                    <a class="col-8 btn btn-success" href="{% url 'payment' %}">Cancel</a>
+                </div>
+                <div class="col-lg-6 mt-4 mb-4 ">
+                    <input class="col-8 btn btn-success " type="submit" value="Crear" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+{% endblock content %}

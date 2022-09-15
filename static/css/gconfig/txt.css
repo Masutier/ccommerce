@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root{
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+}
+
+/* fonts */
+
+.cardtxt{
+    font-family: var(--body-font);
+    color: var(--col10);
+    font-size: 0.95rem;
+    text-align: justify;
+}
+.fontlocal{
+    font-family: var(--body-font);
+    font-size: 1em;
+    color: var(--col10);
+}
+.fontname{
+    font-family: var(--body-font);
+    font-size: 1.5em;
+    color: var(--col10);
+}
+
+.fonttitle{
+    font-family: var(--body-font);
+    font-size: 3em;
+    color: var(--col0);
+}
+.fontinfo{
+    font-family: var(--body-font);
+    font-size: 1.1em;
+    color: var(--col5);
+}
+
+/* Texto */
+
+.txtcol1{
+    color: var(--col1);
+}
+.txtcol2{
+    color: var(--col2);
+}
+.txtcol3{
+    color: var(--col3);
+}
+.txtcol4{
+    color: var(--col4);
+}
+.txtcol5{
+    color: var(--col5);
+}
+.txtcol6{
+    color: var(--col6);
+}
+.txtcol7{
+    color: var(--col7);
+}
+.txtcol8{
+    color: var(--col8);
+}
+.txtcol9{
+    color: var(--col9);
+}
+.txtcol0{
+    color: var(--col0);
+}
+.txtcol10{
+    color: var(--col10);
+}
+
+
+.txtcol11{
+    color: var(--col11);
+}
+.txtcol12{
+    color: var(--col12);
+}
+.txtcol13{
+    color: var(--col13);
+}
+.txtcol14{
+    color: var(--col14);
+}
+.txtcol15{
+    color: var(--col15);
+}
+.txtcol16{
+    color: var(--col16);
+}
+.txtcol17{
+    color: var(--col17);
+}
+.txtcol18{
+    color: var(--col18);
+}
+.txtcol19{
+    color: var(--col19);
+}
+
+.txtcol21{
+    color: var(--col21);
+}
+.txtcol22{
+    color: var(--col22);
+}
+.txtcol23{
+    color: var(--col23);
+}
+.txtcol24{
+    color: var(--col24);
+}
+.txtcol25{
+    color: var(--col25);
+}
+.txtcol26{
+    color: var(--col26);
+}
+.txtcol27{
+    color: var(--col27);
+}
+.txtcol28{
+    color: var(--col28);
+}
+.txtcol29{
+    color: var(--col29);
+}

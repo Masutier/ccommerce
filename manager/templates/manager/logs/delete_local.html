@@ -1,0 +1,33 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-4 mt-4 mx-auto">
+    <div class="col-md">
+        <div class="card text-center mb-3">
+            <div class="card-header">
+                <h2 class="card-title">Eliminar Local</h2>
+            </div>
+            <div class="card-body">
+                <p>Estas seguro de eliminar el Local </p>
+                <h4><strong>{{local.floor}} - {{local.localNum}}</strong></h4>
+                <h4><strong>{{local.name}}</strong></h4>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'deleteLocal' local.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-5 mx-auto">
+                            <a class="btn btn-info btn-sm btn-block" href="{% url 'managmentLocals' %}">Cancel</a>
+                        </div>
+                        <div class="col-md-5 mx-auto">
+                            <input class="btn btn-danger btn-sm btn-block" type="submit" name="Eliminar">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

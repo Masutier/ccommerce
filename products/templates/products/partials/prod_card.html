@@ -1,0 +1,46 @@
+{% load static %}
+{% load humanize %}
+
+<div class="card m-2" style="max-width: 450px;">
+    <div class="row g-0">
+        <div class="col-4">
+            {% if product.cantidad != 0 %}
+                <a href="{{ instance.get_product_absolute_url }}">
+                    <img src="{{ instance.foto1.url }}" class="card-img cardimg" alt="">
+                </a>
+            {% else %}
+                <img src="{% static 'img/icons/agotado.png' %}" class="card-img cardimg" alt="">
+            {% endif %}
+        </div>
+        <div class="col-8">
+            <div class="card-body backcol5">
+                <h5 class="card-title"><strong>{{ product.name }}</strong></h5>
+                <h6 class="card-text">{{ product.description }}</h6>
+
+                <h6>
+                    <span class="badge badge-pill badge-success mr-auto mt-1">Producto </span>
+                    {% if product.label == "Usado" %}
+                        <span class="badge badge-pill badge-success mr-auto mt-1">{{ product.label }}</span>
+                    {% elif product.label == "Nuevo" %}
+                        <span class="badge badge-pill badge-primary mr-auto mt-1">{{ product.label }}</span>
+                    {% endif %}
+                </h6>
+
+                <h6>Precio $
+                    {% if instance.discount %}
+                        <span><strong>{{ instance.discount|intcomma }}</strong></span>
+                        <del class="mr-1 txtcol2">
+                            {{ instance.price|intcomma }}
+                        </del>
+                    {% else %}
+                        <span><strong>{{ instance.price|intcomma }}</strong></span>
+                    {% endif %}
+                </h6>
+
+                <div class="c">
+                    <a href="{{ product.get_product_absolute_url }}" class="btn btn-primary btn-sm ">Detalle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

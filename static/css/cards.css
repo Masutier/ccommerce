@@ -1,0 +1,114 @@
+
+/*CARD EXPAND */
+.title{
+    padding-top: 1.5rem;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+}
+div{
+    padding: 0;
+    margin: 0;
+}
+.row{
+    padding: 0;
+    margin: 0;
+}
+.contbody {
+    margin: 0;
+    padding: 0;
+
+    
+    display: flow-root;
+    justify-content: center;
+    align-items: center;
+}
+.conteinercard {
+    margin: 15px 0 15px 45px;
+    padding: inherit;
+    width: auto;
+    position: relative;
+    justify-content: space-between;
+}
+.conteinercard .cardex {
+    position: relative;
+}
+.conteinercard .cardex .face {
+    width: 250px;
+    height: 180px;
+    transition: 0.5s;
+}
+.conteinercard .cardex .face.face1 {
+    position: relative;
+    background: var(--col4);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    z-index: 1;
+    transform: translateY(100px);
+}
+.conteinercard .cardex:hover .face.face1 {
+    background: var(--col5);
+    padding: 10px;
+    transform: translateY(0);
+}
+.conteinercard .cardex .face.face1 .content img {
+    max-width: 250px;
+}
+.conteinercard .cardex .face.face2 {
+    position: relative;
+    background: var(--col8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(-80px);
+}
+.conteinercard .cardex:hover .face.face2 {
+    transform: translateY(0);
+}
+
+/* PRODUCT CARD */
+
+.cardall {
+    background: var(--col0) !important;
+    height: auto;
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid green;
+    border-radius: 15px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+.cardall:hover {
+    border: 3px solid rgb(235, 143, 57);
+}
+.cardimg {
+    display: flex;
+    margin-top: 5px;
+    margin-right: auto;
+    margin-bottom: 5px;
+    margin-left: auto;
+    width: 120px;
+    height: auto;
+    border-radius: 15px;
+}
+.cardnatuicon {
+    width: 1.3rem;
+}
+.cardnatuicon:hober {
+    width: 1.8rem;
+}
+.card-body{
+    border-radius: 13px;
+}
+.star {
+    display: block;
+    width: 20px;
+    height: auto;
+}
+.cardtxt {
+    color: black;
+}

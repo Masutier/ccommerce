@@ -1,0 +1,121 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class=" contbody">
+    <div class="backcol3 txtcol6">
+        <div class="row">
+            <div class="col 9 title">
+                <h1 id="piso5">Piso 5</h1>
+            </div>
+            <div class="col-3 backcol3 txtcol6 pt-3">
+                <a class="btn btn-color4 btn-sm m-1" href="#piso4">Piso 4</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso3">Piso 3</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso2">Piso 2</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso1">Piso 1</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 row">>
+    {% for local in locales %}
+        {% if local.floor == 5 %}
+            {% include 'locals/partials/card.html' %}
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+
+<div class=" contbody">
+    <div class="backcol3 txtcol6">
+        <div class="row">
+            <div class="col 9 title">
+                <h1 id="piso4">Piso 4</h1>
+            </div>
+            <div class="col-3 backcol3 txtcol6 pt-3">
+                <a class="btn btn-color4 btn-sm m-1" href="#piso5">Piso 5</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso3">Piso 3</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso2">Piso 2</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso1">Piso 1</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 row">
+    {% for local in locales %}
+        {% if local.floor == 4 %}
+            {% include 'locals/partials/card.html' %}
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+
+<div class=" contbody">
+    <div class="backcol3 txtcol6">
+        <div class="row">
+            <div class="col 9 title">
+                <h1 id="piso3">Piso 3</h1>
+            </div>
+            <div class="col-3 backcol3 txtcol6 pt-3">
+                <a class="btn btn-color4 btn-sm m-1" href="#piso5">Piso 5</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso4">Piso 4</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso2">Piso 2</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso1">Piso 1</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 row">
+    {% for local in locales %}
+        {% if local.floor == 3 %}
+            {% include 'locals/partials/card.html' %}
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+
+<div class=" contbody">
+    <div class="backcol3 txtcol6">
+        <div class="row">
+            <div class="col 9 title">
+                <h1 id="piso2">Piso 2</h1>
+            </div>
+            <div class="col-3 backcol3 txtcol6 pt-3">
+                <a class="btn btn-color4 btn-sm m-1" href="#piso5">Piso 5</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso4">Piso 4</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso3">Piso 3</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso1">Piso 1</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 row">
+    {% for local in locales %}
+        {% if local.floor == 2 %}
+            {% include 'locals/partials/card.html' %}
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+
+<div class=" contbody">
+    <div class="backcol3 txtcol6">
+        <div class="row">
+            <div class="col 9 title">
+                <h1 id="piso1">Piso 1</h1>
+            </div>
+            <div class="col-3 backcol3 txtcol6 pt-3">
+                <a class="btn btn-color4 btn-sm m-1" href="#piso5">Piso 5</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso4">Piso 4</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso3">Piso 3</a>
+                <a class="btn btn-color4 btn-sm m-1" href="#piso2">Piso 2</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 row mb-5">
+    {% for local in locales %}
+        {% if local.floor == 1 %}
+            {% include 'locals/partials/card.html' %}
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+
+
+{% endblock content %}

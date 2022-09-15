@@ -1,0 +1,127 @@
+:root {
+
+    /* basic */
+    --col0: white;
+    --col10: black;
+
+    /* palette 1 */
+    --col1: #08306b;
+    --col2: #08519c;
+    --col3: #2171b5;
+    --col4: #4292c6;
+    --col5: #6baed6;
+    --col6: #9ecae1;
+    --col7: #c6dbef;
+    --col8: #deebf7;
+    --col9: #f7fbff;
+
+    /* palette 2 */
+    --col11: #081c15;
+    --col12: #1b4332;
+    --col13: #2d6a4f;
+    --col14: #40916c;
+    --col15: #52b788;
+    --col16: #74c69d;
+    --col17: #95d5b2;
+    --col18: #b7e4c7;
+    --col19: #d8f3dc;
+
+    /* palette 3 */
+    --col21: #370617;
+    --col22: #6a040f;
+    --col23: #9d0208;
+    --col24: #d00000;
+    --col25: #dc2f02;
+    --col26: #e85d04;
+    --col27: #f48c06;
+    --col28: #faa307;
+    --col29: #ffba08;
+}
+
+/* palette 1 */
+.backcol1{
+    background-color: var(--col1);
+}
+.backcol2{
+    background-color: var(--col2);
+}
+.backcol3{
+    background-color: var(--col3);
+}
+.backcol4{
+    background-color: var(--col4);
+}
+.backcol5{
+    background-color: var(--col5);
+}
+.backcol6{
+    background-color: var(--col6);
+}
+.backcol7{
+    background-color: var(--col7);
+}
+.backcol8{
+    background-color: var(--col8);
+}
+.backcol9{
+    background-color: var(--col9);
+}
+
+/* palette 2 */
+.backcol11{
+    background-color: var(--col11);
+}
+.backcol12{
+    background-color: var(--col12);
+}
+.backcol13{
+    background-color: var(--col13);
+}
+.backcol14{
+    background-color: var(--col14);
+}
+.backcol15{
+    background-color: var(--col15);
+}
+.backcol16{
+    background-color: var(--col16);
+}
+.backcol17{
+    background-color: var(--col17);
+}
+.backcol18{
+    background-color: var(--col18);
+}
+.backcol19{
+    background-color: var(--col19);
+}
+
+/* palette 3 */
+.backcol21{
+    background-color: var(--col21);
+}
+.backcol22{
+    background-color: var(--col22);
+}
+.backcol23{
+    background-color: var(--col23);
+}
+.backcol24{
+    background-color: var(--col24);
+}
+.backcol25{
+    background-color: var(--col25);
+}
+.backcol26{
+    background-color: var(--col26);
+}
+.backcol27{
+    background-color: var(--col27);
+}
+.backcol28{
+    background-color: var(--col28);
+}
+.backcol29{
+    background-color: var(--col29);
+}
+

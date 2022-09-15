@@ -1,0 +1,55 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class=" contbody">
+    <div class="title c txtcol6">
+        <h1>Productos</h1>
+    </div>
+
+    <div class="col-12 row mx-auto">
+
+        <div class="col-3 mt-4 txtcol29 ">
+            {% include 'manager/partials/side_menu.html' %}
+        </div>
+
+        <div class="col-9 mx-auto mb-5">
+            <div class="table-responsive">
+                <table class="table">
+                    <tr class="bg-primary">
+                        <th>Nombre</th>
+                        <th>Categoria</th>
+                        <th>Tipo</th>
+                        <th>Local</th>
+                        <th>Precio</th>
+                        <th>Descuento</th>
+                        <th class="c">Accion</th>
+                    </tr>
+                    {% for product in objects %}
+                    <tr class="table-primary">
+                        <td>{{product.name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>{{product.label}}</td>
+                        <td>{{product.local}}</td>
+                        <td>{{ product.price|intcomma }}</td>
+                        <td>{{ product.discount|intcomma }}</td>
+                        <td>
+                            <a class="btn btn-info btn-sm" href="{% url 'edit_product' product.id %}">Editar</a>
+                            <a class="btn btn-danger btn-sm btn-block" href="{% url 'delete_product' product.id %}">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-md-8 mx-auto mt-3">
+                {% if products_count > 15 %}
+                    {% include 'center/partials/pagination.html' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

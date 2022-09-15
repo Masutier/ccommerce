@@ -1,0 +1,37 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-11 p-4 txtcol29 mx-auto">
+    <h1 class="c">{{user.username}} estas modificando tu perfil</h1>
+</div>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="col-11 mx-auto font-1">
+
+        <div class="col-11 row mx-auto mt-3 ">
+            <div class="col-5 row mx-auto">
+                <label>Documento de Identidad</label>
+                {{profile_form.cc}}
+            </div>
+            <div class="col-5 row mx-auto">
+                <label>Numero de Teléfono</label>
+                {{profile_form.phone}}
+            </div>
+        </div>
+
+        <div class="col-lg-5 mx-auto mt-4 row mb-4">
+            <div class="col-lg-6 mt-4 mb-4 ">
+                <a href="{% url 'userProfile' %}" class="col-8 btn btn-success">Cancel</a>
+            </div>
+            <div class="col-lg-6 mt-4 mb-4 ">
+                <input class="col-8 btn btn-success " type="submit" value="Modificar" />
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+{% endblock content %}

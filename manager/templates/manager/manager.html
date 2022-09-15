@@ -1,0 +1,40 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class=" contbody">
+    <div class="title c txtcol6">
+        <h1>Administración</h1>
+    </div>
+
+    <div class="col-12 row mx-auto">
+
+        <div class="col-3 mt-3 mb-5 txtcol29">
+            {% include 'manager/partials/side_menu.html' %}
+        </div>
+
+        <div class="col-9 row txtcol29 ">
+            <div class="col-8 mt-3 mb-5 txtcol29 ">
+                {% include 'manager/partials/locals_deactive.html' %}
+
+                {% include 'manager/partials/locals_active.html' %}
+
+            </div>
+            <div class="col-4 mt-3 txtcol29 ">
+                <h3 class="c">Locales</h3>
+                <p class="c">Total Locales: {{ totalLocales }}</p>
+
+                <h3 class="mt-4 c">Productos</h3>
+                <p class="c">Total Productos: {{ products_count }}</p>
+
+                <h3 class="mt-4 c">Usuarios</h3>
+                <p class="c">Total Usuarios: {{ users_count }}</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}

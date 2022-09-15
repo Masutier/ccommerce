@@ -1,0 +1,21 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-11 p-4 txtcol29 mx-auto">
+    <h1 class="c">401 </h1>
+
+    <div class="col-md-11 p-4 txtcol29 mx-auto c">
+        <h1 class="c">Lo sentimos pero no tienes autorizacion de ingreso a esta pagina</h1>
+
+        <button class="col-8 btn btn-success mt-4 mb-4" onclick="goBack()">Regresar</button>
+    </div>
+</div>
+
+<script>
+    function goBack() {
+    window.history.back();
+    }
+</script>
+
+{% endblock content %}

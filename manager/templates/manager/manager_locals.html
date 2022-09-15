@@ -1,0 +1,69 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class=" contbody">
+    <div class="title c txtcol6">
+        <h1>Locales</h1>
+    </div>
+
+    <div class="col-12 row mx-auto">
+
+        <div class="col-3 mt-4 txtcol29 ">
+            {% include 'manager/partials/side_menu.html' %}
+        </div>
+
+        <div class="col-9 mx-auto mb-5">
+            <div class="table-responsive">
+                <table class="table">
+                    <tr class="bg-primary">
+                        <th class="c">ID</th>
+                        <th class="c">Piso</th>
+                        <th>Local</th>
+                        <th>Nombre del Local</th>
+                        <th>Encargado</th>
+                        <th>Telefono</th>
+                        <th>Activo</th>
+                        <th>Dia de Pago</th>
+                        <th>Hasta</th>
+                        <th>Pagos</th>
+                        <th class="c">Accion</th>
+
+                    </tr>
+                    {% for local in objects %}
+                    <tr class="table-primary">
+                        <td class="c">{{local.id}}</td>
+                        <td class="c">{{local.floor}}</td>
+                        <td>{{local.localNum}}</td>
+                        <td>{{local.name}}</td>
+                        <td>{{local.person}}</td>
+                        <td>{{local.phone}}</td>
+                        <td>{{local.active}}</td>
+                        <td>{{local.lastPay}}</td>
+                        <td>{{local.activethru}}</td>
+                        <td>
+                            {% if local.active == True %}
+                                <a href="{% url 'localPayments' local.id %}" class="btn btn-primary btn-sm">Pagos</a>
+                            {% else %}
+                                <a href="{% url 'localPayments' local.id %}" class="btn btn-danger btn-sm">Pagos</a>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{% url 'editLocalAdmin' local.id %}" class="btn btn-info btn-sm">Editar</a>
+                            <a class="btn btn-danger btn-sm btn-block" href="{% url 'deleteLocal' local.id %}">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-md-8 mx-auto mt-3">
+                {% if totalLocales > 10 %}
+                    {% include 'center/partials/pagination.html' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

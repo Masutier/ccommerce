@@ -1,0 +1,55 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class=" contbody">
+    <div class="title c txtcol6">
+        <h1>Usuarios</h1>
+    </div>
+
+    <div class="col-12 row mx-auto">
+
+        <div class="col-3 mt-4 txtcol29 ">
+            {% include 'manager/partials/side_menu.html' %}
+        </div>
+
+        <div class="col-9 mx-auto mb-5">
+            <div class="table-responsive">
+                <table class="table">
+                    <tr class="bg-primary">
+                        <th>Username</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Documento</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                        <th class="c">Accion</th>
+
+                    </tr>
+                    {% for user in objects %}
+                    <tr class="table-primary">
+                        <td>{{user.username}}</td>
+                        <td>{{user.first_name}}</td>
+                        <td>{{user.last_name}}</td>
+                        <td>{{user.profile.cc}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.profile.phone}}</td>
+                        <td>
+                            <a href="#" class="btn btn-info btn-sm">Editar</a>
+                            <a class="btn btn-danger btn-sm btn-block" href="#">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-md-8 mx-auto mt-3">
+                {% if totalLocales > 13 %}
+                    {% include 'center/partials/pagination.html' %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

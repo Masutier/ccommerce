@@ -1,0 +1,57 @@
+
+<h3 class="c">Locales Ocupados</h3>
+<div class="col-12 mt-3 row">
+    <div class="col-4 ">
+        <h5 class="c">Piso 1</h5>
+        {% for local in all_locals %}
+            <h6 class="fontlocal txtcol27 c">
+                {% if local.floor == 1 %}
+                    {{ local.floor }}-{{ local.localNum }}
+                {% endif %}
+            </h6>
+        {% endfor %}
+    </div>
+    <div class="col-4 ">
+        <h5 class="c">Piso 2</h5>
+        {% for local in all_locals %}
+            <h6 class="fontlocal txtcol27 c">
+                {% if local.floor == 2 %}
+                    {{ local.floor }}-{{ local.localNum }}
+                {% endif %}
+            </h6>
+        {% endfor %}
+    </div>
+    <div class="col-4 ">
+        <h5 class="c">Piso 3</h5>
+        {% for local in all_locals %}
+            <h6 class="fontlocal txtcol27 c">
+                {% if local.floor == 3 %}
+                    {{ local.floor }}-{{ local.localNum }}
+                {% endif %}
+            </h6>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="col-12 mt-3 row">
+    <div class="col-4 ">
+        <h5 class="c">Piso 4</h5>
+        {% for local in all_locals %}
+            <h6 class="fontlocal txtcol27 c">
+                {% if local.floor == 4 %}
+                    {{ local.floor }}-{{ local.localNum }}
+                {% endif %}
+            </h6>
+        {% endfor %}
+    </div>
+    <div class="col-4 ">
+        <h5 class="c">Piso 5</h5>
+        {% for local in all_locals %}
+            <h6 class="fontlocal txtcol27 c">
+                {% if local.floor == 5 %}
+                    {{ local.floor }}-{{ local.localNum }}
+                {% endif %}
+            </h6>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,59 @@
+:root {
+    --btncol1: #9d0208;
+    --btncol2: #08519c;
+    --btncol3: #ffba08;
+    --btncol4: #2d6a4f;
+    --btncol5: #602296;
+}
+
+
+/* btn */
+.btn-color1{
+    background-color: var(--btncol1);
+    color: var(--col0);
+}
+.btn-color1:hover{
+    background-color: var(--col27);
+    color: var(--col0);
+}
+
+.btn-color2{
+    background-color: var(--btncol2);
+    color: var(--col5);
+}
+.btn-color2:hover{
+    background-color: var(--col5);
+    color: var(--col5);
+}
+
+.btn-color3{
+    background-color: var(--btncol3);
+    color: var(--col5);
+}
+.btn-color3:hover{
+    background-color: var(--col26);
+    color: var(--col5);
+}
+
+
+
+
+.btn-color4{
+    background-color: var(--btncol2);
+    color: var(--col9);
+}
+.btn-color4:hover{
+    background-color: var(--col4);
+    color: var(--col9);
+}
+
+.btn-color5{
+    background-color: var(--btncol5);
+    color: var(--col8);
+}
+.btn-color5:hover{
+    background-color: var(--btncol5);
+    color: var(--col8);
+}
+
+

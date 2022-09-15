@@ -1,0 +1,20 @@
+<div class="conteinercard">
+    <div class="cardex">
+        <div class="face face1">
+            <div class="content">
+                <h5 class="fontlocal pt-3 c">{{ local.floor }}-{{ local.localNum }}</h5>
+                <h4 class="fontname c">{{ local.name }}</h4>
+            </div>
+        </div>
+        <div class="face face2">
+            <div class="content ">
+                <p>{{ local.description }}</p>
+                <div class="content mx-auto row mb-3 ">
+                    <div class="col-4">
+                        <td><a href="{{ local.get_absolute_url }}" class="btn btn-color4 btn-sm">Detalle</a></td>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

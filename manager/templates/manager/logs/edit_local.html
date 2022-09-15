@@ -1,0 +1,122 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-11 p-4 txtcol29 mx-auto">
+    <h1 class="c">Locales</h1>
+</div>
+
+<div class="col-9 mx-auto">
+    <div class="col-md-11 p-4 txtcol29 mx-auto">
+        <h1 class="c">Editar Local {{local.floor}}-{{local.localNum}}</h1>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="col-11 mx-auto font-1">
+            {{form.floor.as_hidden}}
+            {{form.localNum.as_hidden}}
+
+            <div class="col-11 row mx-auto mt-3 ">
+                <div class="col-5 row mx-auto">
+                    <label>Nombre del Local :</label>
+                    {{form.name}}
+                </div>
+                <div class="col-5 row mx-auto ">
+                    <label>Persona Encargada :</label>
+                    {{form.person}}
+                </div>
+            </div>
+
+            <div class="col-11 row mx-auto mt-3 ">
+                <div class="col-6 mx-auto mt-4">
+                    <div class="col-10 row mx-auto ">
+                        <label>Logo del Local :</label>
+                        {{form.logo}}
+                    </div>
+                    <div class="col-10 row mx-auto mt-3">
+                        <label>Foto del Local :</label>
+                        {{form.localFoto}}
+                    </div>
+                </div>
+
+                <div class="col-6 mx-auto ">
+                    <div class="col-10 row mx-auto mt-3">
+                        <label>Descripción :</label>
+                        {{form.description}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-11 row mx-auto mt-3 ">
+                <div class="col-5 row mx-auto">
+                    <label>Teléfono :</label>
+                    {{form.phone}}
+                </div>
+                <div class="col-5 row mx-auto ">
+                    <label>whatsapp :</label>
+                    {{form.whatsapp}}
+                </div>
+            </div>
+            
+            <div class="col-11 row mx-auto mt-3 ">
+                <div class="col-5 row mx-auto">
+                    <label>facebook :</label>
+                    {{form.facebook}}
+                </div>
+                <div class="col-5 row mx-auto ">
+                    <label>instagram :</label>
+                    {{form.instagram}}
+                </div>
+            </div>
+
+            <div class="col-11 row mx-auto mt-3 ">
+                <div class="col-8 row mx-auto">
+                    <label>webpage :</label>
+                    {{form.webpage}}
+                </div>
+            </div>
+
+            <div class="col-11 row mx-auto mt-3 ">
+                <div class="col-6 mx-auto mt-4">
+                    <div class="col-10 row mx-auto mt-3">
+                        <label>Ultimo Pago : {{local.lastPay}}</label>
+                        {{form.lastPay.as_hidden}}
+                    </div>
+                    <div class="col-10 row mx-auto mt-3">
+                        <label>Activo Hasta : {{local.activethru}}</label>
+                        {{form.activethru.as_hidden}}
+                    </div>
+                </div>
+
+                <div class="col-6 mx-auto mt-4">
+                    <div class="col-10 row mx-auto mt-3">
+                        <label>Activo : {{local.active}}</label>
+                        {{form.active.as_hidden}}
+                    </div>
+                    <div class="col-10 row mx-auto mt-3">
+                        <label>Valor Mensual : {{local.amount}}</label>
+                        {{form.amount.as_hidden}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-5 mx-auto mt-4 row mb-4">
+            <div class="col-lg-6 mt-4 mb-4 ">
+                <button class="col-8 btn btn-success " onclick="goBack()">Cancel</button>
+            </div>
+            <div class="col-lg-6 mt-4 mb-4 ">
+                <input class="col-8 btn btn-success " type="submit" value="Modificar" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function goBack() {
+    window.history.back();
+    }
+</script>
+
+{% endblock content %}

@@ -1,0 +1,113 @@
+{% extends 'center/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-11 p-4 txtcol29 c">
+    <h1 class="c">Productos</h1>
+</div>
+
+<div class="col-11 row mx-auto">
+
+    <div class="col-3 mt-4 txtcol29 ">
+        {% include 'locals/partials/my_locals.html' %}
+    </div>
+
+    <div class="col-9 ">
+        <div class="col-md-11 p-4 txtcol29 c">
+            <h1 class="ms-4">Editar Producto</h1>
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="col-11 mx-auto font-1">
+                <div class="col-5 row mx-auto mt-3 ">
+                    <div class="col-5 row mx-auto">
+                        <label>Local</label>
+                        {{prodForm.local}}
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-5 row mx-auto">
+                        <label>Estado :</label>
+                        {{prodForm.label}}
+                    </div>
+                    <div class="col-5 row mx-auto ">
+                        <label>Categoria :</label>
+                        {{prodForm.category}}
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-6 mx-auto mt-4">
+                        <div class="col-10 row mx-auto ">
+                            <label>Producto :</label>
+                            {{prodForm.name}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-6 mx-auto mt-4">
+                        <div class="col-10 row mx-auto ">
+                            <label>Precio :</label>
+                            {{prodForm.price}}
+                        </div>
+                        
+                    </div>
+                    <div class="col-6 mx-auto mt-4">
+                        <div class="col-10 row mx-auto ">
+                            <label>Descuento :</label>
+                            {{prodForm.discount}}
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-6 mx-auto ">
+                        <div class="col-10 row mx-auto mt-3">
+                            <label>Descripción :</label>
+                            {{prodForm.description}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-11 row mx-auto mt-3 ">
+                    <div class="col-6 mx-auto mt-4">
+                        <div class="col-10 row mx-auto ">
+                            <label>Foto 1 :</label>
+                            {{prodForm.foto1}}
+                        </div>
+                        <div class="col-10 row mx-auto mt-3">
+                            <label>Foto 2 :</label>
+                            {{prodForm.foto2}}
+                        </div>
+                        <div class="col-10 row mx-auto mt-3">
+                            <label>Foto 3 :</label>
+                            {{prodForm.foto3}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-5 mx-auto mt-4 row mb-4">
+                <div class="col-lg-6 mt-4 mb-4 ">
+                    <button class="col-8 btn btn-success " onclick="goBack()">Cancel</button>
+                </div>
+                <div class="col-lg-6 mt-4 mb-4 ">
+                    <input class="col-8 btn btn-success " type="submit" value="Modificar" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<script>
+    function goBack() {
+    window.history.back();
+    }
+</script>
+
+{% endblock content %}
