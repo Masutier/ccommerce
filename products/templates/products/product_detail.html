@@ -1,4 +1,4 @@
-{% extends 'center/layout.html' %}
+{% extends 'comercial/layout.html' %}
 {% load static %}
 {% load humanize %}
 {% block content %}
@@ -46,10 +46,12 @@
 
             <div class="col-2">
                 <div class="col-10 mx-auto mt-2">
-                    <span class="badge badge-pill badge-danger mt-3">Categoria: {{ product.category }}</span>
+                    <h5>Categoria:</h5>
+                    <h6>{{ product.category }}</h6>
                 </div>
                 <div class="col-10 mx-auto mt-2">
-                    <span class="badge badge-pill badge-danger mt-3">Estado: {{ product.label }}</span>
+                    <h5>Estado:</h5>
+                    <h6>{{ product.label }}</h6>
                 </div>
             </div>
         </div>

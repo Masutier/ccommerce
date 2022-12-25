@@ -3,9 +3,9 @@ import json
 from pathlib import Path
 from urllib.parse import quote_plus
 
-with open('/etc/ccomercial.json') as config_file:
-    config = json.load(config_file)
 
+with open('/home/gabriel/prog/json_config/ccomercial.json') as config_file:
+    config = json.load(config_file)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,8 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'django_crontab',
+    'comercial',
     'crispy_forms',
-    'center',
     'locals',
     'manager',
     'products',
