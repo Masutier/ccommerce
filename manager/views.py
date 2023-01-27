@@ -12,6 +12,7 @@ from .models import *
 from .forms import *
 from .utils import concat_ints
 
+
 @admin_only
 def manager(request):
     locales_active = Local.objects.filter(active=True)
@@ -25,7 +26,6 @@ def manager(request):
     usuarios = User.objects.all()
     users_count = usuarios.count()
 
-
     context = {'title':'Administración', 'totalLocales':totalLocales, 'all_locals':all_locals, 'locales_active':locales_active,
      'locales_not_active':locales_not_active, 'products_count':products_count, 'users_count':users_count}
     return render(request, 'manager/manager.html', context)
@@ -35,7 +35,6 @@ def manager(request):
 @admin_only
 def managmentLocals(request):
     objects = Local.objects.all().order_by('id')
-    all_locals = objects
     totalLocales = objects.count()
     
     # pagination
@@ -53,7 +52,7 @@ def managmentLocals(request):
     end_index1 = index1 + 3 if index1 <= max_index1 else max_index1
     page_range1 = paginator.page_range[start_index1:end_index1]
 
-    context = {'title':'Administración', 'all_locals':all_locals, 'objects':objects, 'totalLocales':totalLocales, 'page_range1':page_range1}
+    context = {'title':'Admin Locals', 'objects':objects, 'totalLocales':totalLocales, 'page_range1':page_range1}
     return render(request, 'manager/manager_locals.html', context)
 
 
